@@ -361,3 +361,24 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/lib/e_sqlite3.dll
+/lib/FastNoise.dll
+/lib/glfw3.dll
+/lib/Microsoft.Data.Sqlite.dll
+/lib/NVorbis.dll
+/lib/OpenTK.Audio.OpenAL.dll
+/lib/OpenTK.Compute.dll
+/lib/OpenTK.Core.dll
+/lib/OpenTK.Graphics.dll
+/lib/OpenTK.Input.dll
+/lib/OpenTK.Mathematics.dll
+/lib/OpenTK.Windowing.Common.dll
+/lib/OpenTK.Windowing.Desktop.dll
+/lib/OpenTK.Windowing.GraphicsLibraryFramework.dll
+/lib/soloud.dll
+/lib/SoLoudLib.dll
+/lib/SQLitePCLRaw.batteries_v2.dll
+/lib/SQLitePCLRaw.core.dll
+/lib/SQLitePCLRaw.provider.e_sqlite3.dll
+/lib/StbImageSharp.dll
+/lib/StbImageWriteSharp.dll
