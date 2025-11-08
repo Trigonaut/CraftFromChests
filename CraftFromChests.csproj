@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UI\MapHud.cs~RF66c6c918.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ignitron\Ignitron.Loader.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Allumeria">
+      <HintPath>..\Allumeria\Allumeria.dll</HintPath>
+    </Reference>
+    <Reference Include="FastNoise">
+      <HintPath>..\Allumeria\lib\FastNoise.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite">
+      <HintPath>..\Allumeria\lib\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>..\Allumeria\lib\NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Audio.OpenAL">
+      <HintPath>..\Allumeria\lib\OpenTK.Audio.OpenAL.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Compute">
+      <HintPath>..\Allumeria\lib\OpenTK.Compute.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Core">
+      <HintPath>..\Allumeria\lib\OpenTK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Graphics">
+      <HintPath>..\Allumeria\lib\OpenTK.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Input">
+      <HintPath>..\Allumeria\lib\OpenTK.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Mathematics">
+      <HintPath>..\Allumeria\lib\OpenTK.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Windowing.Common">
+      <HintPath>..\Allumeria\lib\OpenTK.Windowing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Windowing.Desktop">
+      <HintPath>..\Allumeria\lib\OpenTK.Windowing.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Windowing.GraphicsLibraryFramework">
+      <HintPath>..\Allumeria\lib\OpenTK.Windowing.GraphicsLibraryFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="SoLoudLib">
+      <HintPath>..\Allumeria\lib\SoLoudLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\Allumeria\lib\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\Allumeria\lib\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
+      <HintPath>..\Allumeria\lib\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="StbImageSharp">
+      <HintPath>..\Allumeria\lib\StbImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="StbImageWriteSharp">
+      <HintPath>..\Allumeria\lib\StbImageWriteSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(TargetDir)$(MSBuildProjectName).dll $(SolutionDir)Allumeria\bin\Debug\netcoreapp9.0\mods\$(MSBuildProjectName)\ /Y" />
+  </Target>
+
+</Project>
